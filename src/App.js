@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { PureComponent } from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state={
 
-export default App;
+    }
+  }
+  render() { //see Array Elements
+    const elements = [
+      {name:'Perry',
+        age:32
+      },
+      {name:'Victor',
+        age:35
+      },
+      {name:'Assan',
+        age:29
+      },
+    ];
+
+    const items = [] //render html
+
+    for (const  of elements.entries()) {
+      items.push( <div class="flex" key={index}>
+          <p class="name">{value.name}</p>
+          <p class="details">Age:{value.age}</p>
+          </div>)
+    }
+    return (
+        <div id="flex">
+        {items}
+        </div>
+  )
+  }
+}
